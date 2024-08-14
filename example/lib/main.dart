@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:melon_bouncing/melon_bouncing.dart';
 
 void main() {
+  MelonBouncingPluginEnvironment.instance.setFontFamily("Itim");
   runApp(const MyApp());
 }
 
@@ -13,8 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _target = MelonBouncing();
-
   @override
   void initState() {
     super.initState();
@@ -27,8 +26,8 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: const Center(
-          child: Text('Running'),
+        body: Center(
+          child: Text('Running').hover(),
         ),
       ),
     );
