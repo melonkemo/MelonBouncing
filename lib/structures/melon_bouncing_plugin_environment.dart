@@ -10,9 +10,9 @@ class MelonBouncingPluginEnvironment {
 
   MelonBouncingPluginEnvironment._internal();
 
-  late String fontFamily;
+  String? fontFamily;
 
-  void setFontFamily(String fontFamily) {
+  void init({String? fontFamily}) {
     this.fontFamily = fontFamily;
   }
 }

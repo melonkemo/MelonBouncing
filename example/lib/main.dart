@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:melon_bouncing/melon_bouncing.dart';
 
 void main() {
-  MelonBouncingPluginEnvironment.instance.setFontFamily("Itim");
+  MelonBouncingPluginEnvironment.instance.init(fontFamily: "Itim");
   runApp(const MyApp());
 }
 
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running').hover(),
+          child: Text('ทดสอบ').hover(),
         ),
       ),
     );
