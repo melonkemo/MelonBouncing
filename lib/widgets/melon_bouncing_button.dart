@@ -74,43 +74,39 @@ class MelonBouncingButton extends StatelessWidget {
       double? fontSize,
       double? weight,
       EdgeInsetsGeometry? padding,
+      bool isHover = false,
       double? borderRadius}) {
-    return OnHover(
-      x: x,
-      y: y,
-      z: z,
-      disableScale: !enabledHover,
-      builder: (isHover) {
-        return MelonBouncingButton(
-            callback: callback,
-            active: active,
-            isBouncing: isBouncing,
-            borderRadius: borderRadius,
-            isHover: isHover,
-            child: Container(
-              height: height,
-              width: width,
-              padding: padding,
-              decoration: BoxDecoration(
-                  color: color ?? Colors.white,
-                  borderRadius: BorderRadius.circular(borderRadius ?? 10)),
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(
-                  text,
-                  style: TextStyle(
-                    color: textColor ?? Colors.black,
-                    fontSize: fontSize,
-                    fontWeight: fontWeight,
-                    letterSpacing: 0.0,
-                    fontFamily: fontFamily ??
-                        MelonBouncingPluginEnvironment.instance.fontFamily,
-                    //fontWeight: FontWeight.bold,
-                  ),
-                )
-              ]),
-            ));
-      },
+    return MelonBouncingButton(
+      callback: callback,
+      active: active,
+      isBouncing: isBouncing,
+      borderRadius: borderRadius,
+      isHover: isHover,
+      child: Container(
+        height: height,
+        width: width,
+        padding: padding,
+        decoration: BoxDecoration(
+            color: color ?? Colors.white,
+            borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: TextStyle(
+                color: textColor ?? Colors.black,
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                letterSpacing: 0.0,
+                fontFamily: fontFamily ??
+                    MelonBouncingPluginEnvironment.instance.fontFamily,
+                //fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
